@@ -27,5 +27,5 @@ jobs:
 
       - name: Run Tests
         run: |
-          cd ${{ project-root }}
+          cd ${{ inputs.project-root }}
           python -3.10 manage.py test
