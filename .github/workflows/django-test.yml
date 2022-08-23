@@ -2,23 +2,30 @@ name: Django CI
 
 on:
   workflow_call:
+    inputs:
+      project-root:
+        description: The root folder of the Django site
+        required: true
+        type: string
   
 jobs:
   test:
     runs-on: ubuntu-latest
     
-    - name: Checkout Code
-      uses: actions/checkout@v2
-      
-    - name: Setup Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: "3.10"
-        
-    - name: Install requirements
-      run: |
-        pip install -r requirements.txt
-    
-    - name: Run Tests
-      run: |
-        python -3.10 manage.py test
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+      - name: Install requirements
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Tests
+        run: |
+          cd ${{ project-root }}
+          python -3.10 manage.py test
