@@ -28,4 +28,4 @@ jobs:
       - name: Run Tests
         run: |
           cd ${{ inputs.project-root }}
-          python -3.10 manage.py test
+          python3.10 manage.py test
