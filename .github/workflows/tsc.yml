@@ -17,8 +17,8 @@ jobs:
        node-version: "*"
        check-latest: true
          
-    - name: install yarn
-      run: yarn install
+    - name: install ts
+      run: npm install typescript
        
     - name: compile typescript
       uses: icrawl/action-tsc@v1
