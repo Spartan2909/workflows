@@ -5,7 +5,7 @@ on:
   
 jobs:
   tsc:
-    name: tsc
+    name: Compile Typescript
     runs-on: ubuntu-latest
      
     steps:
