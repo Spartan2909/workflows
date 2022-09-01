@@ -10,6 +10,7 @@ on:
   
 jobs:
   test:
+    name: Test Django Site
     runs-on: ubuntu-latest
     
     steps:
