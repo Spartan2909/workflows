@@ -32,7 +32,7 @@ jobs:
           DEBUG: True
           ALLOWED_HOSTS: "*"
           CSRF_TRUSTED_ORIGINS: "http://*"
-          STATIC_ROOT: ${{ inputs.project-root }}/static
+          FILE_ROOT: ${{ inputs.project-root }}/files
         run: |
           cd ${{ inputs.project-root }}
           python3.10 manage.py test
