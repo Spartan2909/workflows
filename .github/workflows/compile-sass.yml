@@ -32,16 +32,11 @@ jobs:
       - name: Install SASS
         run: npm install -g sass    
         
-      - name: Compile css
+      - name: Compile CSS
         run: sass ${{ inputs.sass-folder }}:css
         
-  upload-css:
-    needs: build-css
-    if: inputs.upload-artifact
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Upload
+      - name: Upload compiled CSS
+        if: inputs.upload-artifact
         uses: actions/upload-artifact@v3
         with:
           name: compiled-css
