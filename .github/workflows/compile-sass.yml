@@ -8,7 +8,6 @@ on:
         required: true
         type: string
         
-    inputs:
       upload-artifact:
         description: Upload the created CSS
         required: false
@@ -38,7 +37,7 @@ jobs:
         
   upload-css:
     needs: build-css
-    uses: ubuntu-latest
+    runs-on: ubuntu-latest
     if: inputs.upload-artifact
     
     steps:  
