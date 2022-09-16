@@ -40,9 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     if: inputs.upload-artifact
     
-    steps:  
-      - name: Store compiled css
-        uses: actions/upload-artifact@v3
-        with:
-          name: compiled-css
-          path: css
+    uses: actions/upload-artifact@v3
+      with:
+        name: compiled-css
+        path: css
