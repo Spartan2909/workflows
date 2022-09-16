@@ -33,7 +33,7 @@ jobs:
         run: npm install -g sass    
         
       - name: Compile css
-        run: sass sass:css
+        run: sass ${{ inputs.sass-folder }}:css
         
   upload-css:
     needs: build-css
