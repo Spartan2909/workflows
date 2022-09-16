@@ -38,8 +38,11 @@ jobs:
   upload-css:
     needs: build-css
     if: inputs.upload-artifact
+    runs-on: ubuntu-latest
     
-    uses: actions/upload-artifact@v3
-    with:
-      name: compiled-css
-      path: css
+    steps:
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: compiled-css
+          path: css
