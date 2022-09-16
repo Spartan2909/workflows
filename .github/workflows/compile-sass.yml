@@ -1,7 +1,7 @@
 name: SASS CI
   
 on:
-  workflow-call:
+  workflow_call:
     inputs:
       sass-folder:
         description: The folder containing the SASS
