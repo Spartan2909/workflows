@@ -1,0 +1,49 @@
+name: SASS CI
+  
+on:
+  workflow-call:
+    inputs:
+      sass-folder:
+        description: The folder containing the SASS
+        required: true
+        type: string
+        
+    inputs:
+      upload-artifact:
+        description: Upload the created CSS
+        required: false
+        default: false
+        type: boolean
+  
+jobs: 
+  build-css:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Make directory for css
+        run: mkdir -vp css
+        
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          
+      - name: Install SASS
+        run: npm install -g sass    
+        
+      - name: Compile css
+        run: sass sass:css
+        
+  upload-css:
+    needs: build-css
+    uses: ubuntu-latest
+    if: inputs.upload-artifact
+    
+    steps:  
+      - name: Store compiled css
+        uses: actions/upload-artifact@v3
+        with:
+          name: compiled-css
+          path: css
