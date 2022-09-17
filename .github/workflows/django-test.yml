@@ -33,6 +33,4 @@ jobs:
           ALLOWED_HOSTS: "*"
           CSRF_TRUSTED_ORIGINS: "http://*"
           FILE_ROOT: ${{ inputs.project-root }}/files
-        run: |
-          cd ${{ inputs.project-root }}
-          python3.10 manage.py test
+        run: python3.10 ${{ inputs.project-root }}/manage.py test
