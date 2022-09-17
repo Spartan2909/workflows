@@ -28,7 +28,7 @@ jobs:
 
       - name: Run Tests
         env:
-          SECRET_KEY: RjHw?mJ3=!SgpJf!V^ciH:k?il[}KA
+          SECRET_KEY: test-key-insecure
           DEBUG: True
           ALLOWED_HOSTS: "*"
           CSRF_TRUSTED_ORIGINS: "http://*"
