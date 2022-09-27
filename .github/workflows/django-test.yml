@@ -24,7 +24,7 @@ jobs:
 
       - name: Install requirements
         run: |
-          xargs -a requirements.txt -n 1 pip install
+          cat requirements.txt | xargs -n 1 pip install
 
       - name: Run Tests
         env:
