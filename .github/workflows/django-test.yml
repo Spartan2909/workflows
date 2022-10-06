@@ -26,9 +26,9 @@ jobs:
         run: bash ci-setup.sh
 
       - name: Install requirements
-        continue-on-error: true
-        run: |
-          cat requirements.txt | xargs -n 1 pip install
+        #continue-on-error: true
+        #run: cat requirements.txt | xargs -n 1 pip install
+        run: pip install -r requirements.txt
 
       - name: Run Tests
         env:
