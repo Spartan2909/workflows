@@ -7,6 +7,10 @@ on:
         description: The root folder of the Django site
         required: true
         type: string
+      env:
+        description: The environment variables
+        required: false
+        type: list
   
 jobs:
   test:
