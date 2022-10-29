@@ -8,7 +8,7 @@ on:
         required: true
         type: string
       env:
-        description: The environment variables as a comma-seperated list surrounded by quotes
+        description: The environment variables as a json object surrounded by quotes
         required: false
         type: string
   
