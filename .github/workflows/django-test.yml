@@ -37,4 +37,8 @@ jobs:
           ALLOWED_HOSTS: "*"
           CSRF_TRUSTED_ORIGINS: "http://*"
           FILE_ROOT: ${{ inputs.project-root }}/files
+          DEPLOY_USER: Spartan2909
+          DEPLOY_TOKEN: 336b2ea8423ea3ee562bea7bb35c393080cfc044
+          DEPLOY_HOST: www.pythonanywhere.com
+          DEPLOY_URL: spartan2909.pythonanywhere.com
         run: python3.10 ${{ inputs.project-root }}/manage.py test
