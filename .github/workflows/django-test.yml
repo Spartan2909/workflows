@@ -8,9 +8,9 @@ on:
         required: true
         type: string
       env:
-        description: The environment variables
+        description: The environment variables as a comma-seperated list surrounded by quotes
         required: false
-        type: list
+        type: string
   
 jobs:
   test:
